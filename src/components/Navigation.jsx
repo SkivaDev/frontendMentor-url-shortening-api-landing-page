@@ -4,7 +4,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative flex justify-between items-center gap-[46px] mt-12 px-[1.4125rem] md:px-[2.475rem] w-full max-w-[1190px] mx-auto bg-slate-500">
+    <nav className="relative flex justify-between items-center gap-[46px] mt-[48px] px-[22.6px] md:px-[39.6px] w-full max-w-[1190px] mx-auto">
       <a href="/">
         <img
           className="max-w-max"
@@ -15,9 +15,9 @@ const Navigation = () => {
       <div
         className={`${
           isOpen ? "flex" : "hidden"
-        } md:flex flex-col md:flex-row justify-between items-center absolute md:relative gap-8 md:gap-0 p-8 md:p-0 top-1/2 md:top-0 left-1/2 md:left-0 translate-x-[-50%] translate-y-[20%] md:transform-none bg-white md:bg-transparent w-full`}
+        } md:flex flex-col md:flex-row justify-between items-center absolute md:relative gap-8 md:gap-0 p-8 md:p-0 top-1/2 md:top-0 left-1/2 md:left-0 translate-x-[-50%] translate-y-[20%] md:transform-none md:bg-transparent w-full`}
       >
-        <ul className="flex flex-col md:flex-row gap-[27.12px] md:mr-[2.9rem] text-[15px] text-red font-bold tracking-[1.4px]">
+        <ul className="flex flex-col md:flex-row gap-[31.12px] md:mr-[46.4px] text-[15px] font-bold">
           <li>
             <a href="/" className="hover:text-dark-grayish-blue transition-all">
               Features
@@ -34,11 +34,11 @@ const Navigation = () => {
             </a>
           </li>
         </ul>
-        <div>
-          <a href="">Login</a>
+        <div className="flex justify-center items-center gap-[34px]">
+          <a href="" className="font-bold">Login</a>
           <a
             href="/"
-            className="py-[7px] px-[22px] hover:bg-amber-600 md:hover:bg-yellow bg-yellow md:bg-white border rounded-full text-[1.0125rem]  font-fraunces font-bold tracking-[-0.0437rem] transition-all"
+            className="block py-[8px] px-[24px] hover:bg-amber-600 md:hover:bg-yellow bg-yellow md:bg-cyan rounded-full text-[16.2px]  font-fraunces font-bold tracking-[-0.6992px] transition-all"
           >
             Sign Up
           </a>
