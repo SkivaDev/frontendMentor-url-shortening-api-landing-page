@@ -3,24 +3,24 @@ import Hero from "../components/Hero.astro";
 import Navigation from "../components/Navigation";
 import ShorteningSection from "../components/ShorteningSection";
 
-import '../styles/globals.css'
+import "../styles/globals.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header>
-			<Navigation client:load/> 
-		</header>
-		<main class="overflow-x-hidden">
-			<Hero />
-			<ShorteningSection />
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header>
+      <Navigation client:load />
+    </header>
+    <main class="overflow-x-hidden">
+      <Hero />
+      <ShorteningSection />
+    </main>
+  </body>
 </html>
