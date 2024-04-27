@@ -4,6 +4,7 @@
         "header",
         "hero",
         "FormSection",
-        "ShorteningSection"
+        "ShorteningSection",
+        "footer"
     ]
 }
