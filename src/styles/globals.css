@@ -17,6 +17,9 @@ body {
   outline-offset: 0.15rem;
 }
 
+/* input::placeholder {
+  font-size: 5px;
+} */
 
 .hamburger {
   position: absolute;

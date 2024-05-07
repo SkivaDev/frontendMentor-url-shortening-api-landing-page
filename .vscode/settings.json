@@ -5,6 +5,7 @@
         "hero",
         "FormSection",
         "ShorteningSection",
-        "footer"
+        "footer",
+        "StatisticsSection"
     ]
 }
