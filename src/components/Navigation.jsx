@@ -9,7 +9,7 @@ const Navigation = () => {
         <img
           className="max-w-max"
           src="./images/logo.svg"
-          alt="sunnyside logo"
+          alt="shortly logo"
         />
       </a>
       <div
