@@ -6,6 +6,7 @@
         "FormSection",
         "ShorteningSection",
         "footer",
-        "StatisticsSection"
+        "StatisticsSection",
+        "GetStartedSection"
     ]
 }
