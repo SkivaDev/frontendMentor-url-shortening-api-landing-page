@@ -11,6 +11,7 @@ export default {
 				'grayish-violet': 'hsl(257, 7%, 63%)',
 				'very-dark-blue': 'hsl(255, 11%, 22%)',
 				'very-dark-violet': 'hsl(260, 8%, 14%)',
+				"light-gray": "hsl(230, 25%, 95.29%)"
 			},
 			backgroundColor: {
 				'cyan': 'hsl(180, 66%, 49%)',
@@ -20,6 +21,7 @@ export default {
 				'grayish-violet': 'hsl(257, 7%, 63%)',
 				'very-dark-blue': 'hsl(255, 11%, 22%)',
 				'very-dark-violet': 'hsl(260, 8%, 14%)',
+				"light-gray": "hsl(230, 25%, 95.29%)"
 			},
 			borderColor: {
 				'grayish-violet': 'hsl(257, 7%, 63%)'
