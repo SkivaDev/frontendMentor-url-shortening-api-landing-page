@@ -3,7 +3,7 @@ import React from "react";
 const ShorteningSection = () => {
   return (
     <section className="w-full bg-light-gray">
-      <div className="flex flex-col w-full max-w-[1190px] mx-auto px-[23.6px] md:px-[39.6px] pb-[120px]">
+      <div className="flex flex-col w-full max-w-[1190px] mx-auto px-[23.6px] md:px-[39.6px] pb-[90px] md:pb-[120px]">
         <Form />
         <div></div>
       </div>
