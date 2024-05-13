@@ -70,3 +70,13 @@ body {
 .open .hamburger__box3 {
   transform: rotate(-45deg) translate(0.5rem, -0.4375rem);
 }
+
+.bg-pattern {
+  background-image: url("/images/bg-shorten-desktop.svg");
+}
+
+@media (max-width: 768px) {
+  .bg-pattern {
+    background-image: url("/images/bg-shorten-mobile.svg");
+  }
+}

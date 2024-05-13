@@ -5,6 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'cyan': 'hsl(180, 66%, 49%)',
+				'light-cyan': 'hsl(180, 65%, 74%)',
 				'dark-violet': 'hsl(257, 27%, 26%)',
 				'red': 'hsl(0, 87%, 67%)',
 				'gray': 'hsl(0, 0%, 75%)',
@@ -15,6 +16,7 @@ export default {
 			},
 			backgroundColor: {
 				'cyan': 'hsl(180, 66%, 49%)',
+				'light-cyan': 'hsl(180, 65%, 74%)',
 				'dark-violet': 'hsl(257, 27%, 26%)',
 				'red': 'hsl(0, 87%, 67%)',
 				'gray': 'hsl(0, 0%, 75%)',
