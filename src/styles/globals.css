@@ -74,9 +74,15 @@ body {
 .bg-pattern {
   background-image: url("/images/bg-shorten-desktop.svg");
 }
+.bg-boost-pattern {
+  background-image: url("/images/bg-boost-desktop.svg");
+}
 
 @media (max-width: 768px) {
   .bg-pattern {
     background-image: url("/images/bg-shorten-mobile.svg");
+  }
+  .bg-boost-pattern {
+    background-image: url("/images/bg-boost-mobile.svg");
   }
 }

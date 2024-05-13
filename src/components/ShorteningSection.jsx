@@ -13,7 +13,7 @@ const ShorteningSection = () => {
 
 const Form = () => {
   return (
-    <form className="w-full flex flex-col md:flex-row justify-between gap-[16px] md:gap-[24px] px-[24px] md:pl-[64px] md:pr-[65px] py-[25px] md:py-[52px] mt-[-80px] md:mt-[-84px] rounded-[10px]  bg-dark-violet bg-pattern">
+    <form className="w-full flex flex-col md:flex-row justify-between gap-[16px] md:gap-[24px] px-[24px] md:pl-[64px] md:pr-[65px] py-[25px] md:py-[52px] mt-[-80px] md:mt-[-84px] rounded-[10px] bg-dark-violet bg-pattern bg-no-repeat bg-cover">
       <div className="w-full md:flex-1 bg-white h-full px-[16px] md:px-[30px] py-[10px] md:pt-[18px] md:pb-[15px] text-[19px] font-medium rounded-[10px] tracking-[0.5px] md:tracking-normal">
         <input
           type="text"
