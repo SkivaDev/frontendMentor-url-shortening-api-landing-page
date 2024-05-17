@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cleanuriAPI from "../api/cleanuriAPI";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const ShorteningSection = () => {
   //Array de enlaces acortados
@@ -44,21 +45,33 @@ const ShorteningSection = () => {
     if (links) setLinks(links);
   };
 
-  
+  const handleErrors = (errorMessage) => {
+    toast.error(errorMessage);
+  };
 
 
   const createShortLink = async (link) => {
     const response = await cleanuriAPI(link);
 
-    // if (response.error) {
-    //   // handleErrors(response.error_code);
-    //   console.log("ERROR EN CREATESHORTLINK");
-    //   return false;
-    // }
+    if (response.status !== 200) {
+      console.log("SALIO ERROR :c");
+      handleErrors(response.response.data.error);
+      console.log(response.response.data.error);
+      return false;
+    }
 
     const { result_url } = response.data;
     console.log("RESULT ES: ", response.data);
     console.log("RESULT ES: ", result_url);
+    const linkExists = links.find(
+      (url) => url.original_link === link
+    );
+
+    if (linkExists) {
+      toast.warning("This link has already been shortened");
+      setFocusToButton(linkExists.code);
+      return true;
+    }
 
     const newLink = {
       original_link: link,

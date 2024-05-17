@@ -48,6 +48,7 @@ const cleanuriAPI = async (url) => {
 
   } catch (error) {
     console.error(error);
+    return error;
   }
 };
 

@@ -5,6 +5,7 @@ import Hero from "../components/Hero.astro";
 import Navigation from "../components/Navigation";
 import ShorteningSection from "../components/ShorteningSection";
 import StatisticsSection from "../components/StatisticsSection.astro";
+import ToastContainer from "../components/ToastContainer";
 
 import "../styles/globals.css";
 ---
@@ -28,5 +29,6 @@ import "../styles/globals.css";
       <GetStartedSection />
     </main>
     <Footer />
+    <ToastContainer client:load/>
   </body>
 </html>
