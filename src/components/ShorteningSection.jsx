@@ -44,6 +44,9 @@ const ShorteningSection = () => {
     if (links) setLinks(links);
   };
 
+  
+
+
   const createShortLink = async (link) => {
     const response = await cleanuriAPI(link);
 
@@ -103,10 +106,7 @@ const Form = ({ onHandleSubmit }) => {
     reset,
   } = useForm();
 
-  const [text, setText] = useState("");
-
   const onSubmit = async (data) => {
-
     const { url } = data;
 
     onHandleSubmit(url).then((res) => {
@@ -114,10 +114,6 @@ const Form = ({ onHandleSubmit }) => {
         reset();
       }
     });
-  };
-
-  const onchangeHandler = (e) => {
-    setText(e.target.value);
   };
 
   return (
@@ -131,7 +127,6 @@ const Form = ({ onHandleSubmit }) => {
           type="text"
           placeholder="Shorten a link here..."
           className="w-full bg-transparent text-[15px] md:text-[20px]"
-          // onChange={onchangeHandler}
           {...register("url", {
             required: {
               value: true,
