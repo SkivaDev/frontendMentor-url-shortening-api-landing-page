@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import cleanuriAPI from "../api/cleanuriAPI";
+import { useForm } from "react-hook-form";
 
 const ShorteningSection = () => {
-  
   //Array de enlaces acortados
   const [links, setLinks] = useState([]);
 
@@ -96,34 +96,75 @@ const ShorteningSection = () => {
 };
 
 const Form = ({ onHandleSubmit }) => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+
   const [text, setText] = useState("");
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    // const data = await cleanuriAPI(text);
-    onHandleSubmit(text);
-  }
+  const onSubmit = async (data) => {
 
-  function onchangeHandler(e) {
+    const { url } = data;
+
+    onHandleSubmit(url).then((res) => {
+      if (res) {
+        reset();
+      }
+    });
+  };
+
+  const onchangeHandler = (e) => {
     setText(e.target.value);
-  }
+  };
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
       className="w-full flex flex-col md:flex-row justify-between gap-[16px] md:gap-[24px] px-[24px] md:pl-[64px] md:pr-[65px] py-[25px] md:py-[52px] mt-[-80px] md:mt-[-84px] rounded-[10px] bg-dark-violet bg-pattern bg-no-repeat bg-cover"
     >
-      <div className="w-full md:flex-1 bg-white h-full px-[16px] md:px-[30px] py-[10px] md:pt-[18px] md:pb-[15px] text-[19px] font-medium rounded-[10px] tracking-[0.5px] md:tracking-normal">
+      <div className="relative w-full md:flex-1 bg-white h-full px-[16px] md:px-[30px] py-[10px] md:pt-[18px] md:pb-[15px] text-[19px] font-medium rounded-[10px] tracking-[0.5px] md:tracking-normal">
         <input
           id="link-input"
           type="text"
           placeholder="Shorten a link here..."
           className="w-full bg-transparent text-[15px] md:text-[20px]"
-          onChange={onchangeHandler}
+          // onChange={onchangeHandler}
+          {...register("url", {
+            required: {
+              value: true,
+              message: "Please add a link",
+            },
+            pattern: {
+              value: /^(ftp|http|https):\/\/[^ "]+$/,
+              message: "Please enter a valid URL",
+            },
+          })}
+          validation={errors.url}
         />
         <label htmlFor="link-input" className="sr-only">
           Shorten a link here...
         </label>
+
+        <div aria-live="polite" aria-atomic="true">
+          {errors.url?.type === "required" && (
+            <span className="absolute bottom-[-30px] left-2 text-red text-[13px] mt-[2px]">
+              {errors.url.message}
+            </span>
+          )}
+          {errors.url?.type === "pattern" && (
+            <span className="absolute bottom-[-30px] left-2 text-red text-[13px] mt-[2px]">
+              {errors.url.message}
+            </span>
+          )}
+          {errors.url?.type === "custom" && (
+            <span className="absolute bottom-[-30px] left-2 text-red text-[13px] mt-[2px]">
+              {errors.url.message}
+            </span>
+          )}
+        </div>
       </div>
       <button
         type="submit"
@@ -164,7 +205,9 @@ const SingleLink = React.forwardRef(({ link }, ref) => {
       ref={ref}
       className="w-full flex flex-col md:flex-row justify-between items-center gap-[90px] bg-white pr-[24px] pl-[32px] py-[16px] text-[19px] font-medium rounded-[10px] tracking-[0.5px]"
     >
-      <p className="w-full md:flex-1 overflow-hidden whitespace-nowrap text-ellipsis">{link.original_link}</p>
+      <p className="w-full md:flex-1 overflow-hidden whitespace-nowrap text-ellipsis">
+        {link.original_link}
+      </p>
       <div>
         <a className="w-full md:w-[188px] mt-[16px] md:mt-0 md:ml-[16px] text-cyan">
           {link.short_link}
