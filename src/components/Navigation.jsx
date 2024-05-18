@@ -13,7 +13,7 @@ const Navigation = () => {
           isOpen ? "translate-y-[20%]" : "translate-y-[-120%]"
         } flex md:flex flex-col md:flex-row justify-between items-center absolute md:relative gap-8 md:gap-0 p-8 md:p-0 top-1/2 md:top-0 left-1/2 md:left-0 translate-x-[-50%]  text-white md:text-black md:transform-none bg-dark-violet md:bg-transparent w-full max-w-[90%] md:max-w-none rounded-lg md:rounded-none transition-all duration-500`}
       >
-        <ul className="flex flex-col md:flex-row gap-[31.12px] md:mr-[46.4px] text-[20px] md:text-[15px] font-bold text-center md:text-left text-gray">
+        <ul className="flex flex-col md:flex-row gap-[31.12px] md:mr-[46.4px] text-[20px] md:text-[15px] font-bold text-center md:text-left text-grayish-violet">
           <li>
             <a href="/" className="hover:text-black transition-all">
               Features
@@ -31,7 +31,7 @@ const Navigation = () => {
           </li>
         </ul>
         <div className="flex flex-col md:flex-row justify-center items-center gap-[34px] text-[20px] md:text-[16px]  w-full md:w-auto pt-[30px] md:pt-0 border-t border-grayish-violet md:border-none">
-          <a href="" className="font-bold text-gray hover:text-black">
+          <a href="" className="font-bold text-grayish-violet hover:text-black">
             Login
           </a>
           <a

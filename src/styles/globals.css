@@ -79,6 +79,27 @@ body {
   background-image: url("/images/bg-boost-desktop.svg");
 }
 
+
+.statistics-cards::before {
+  content: "";
+  display: block;
+  width: 67.8125rem;
+  height: .5rem;
+  bottom: 10.75rem;
+  background-color: #2acfcf;
+  margin-bottom: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+
+@media (max-width: 1024px) {
+  .statistics-cards::before {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .bg-pattern {
     background-image: url("/images/bg-shorten-mobile.svg");
@@ -86,4 +107,12 @@ body {
   .bg-boost-pattern {
     background-image: url("/images/bg-boost-mobile.svg");
   }
+
+  .statistics-cards::before {
+    display: block;
+    width: .5rem;
+    height: 53.125rem;
+  }
 }
+
+
