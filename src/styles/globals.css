@@ -12,7 +12,9 @@ body {
 
 /* Focus on elements only when they are navigated to using the keyboard. */
 :is(a, button, input, textarea, select, details, summary):focus-visible,
-:is(a, button, input, textarea, select, details, summary):focus:not(:focus-visible) {
+:is(a, button, input, textarea, select, details, summary):focus:not(
+    :focus-visible
+  ) {
   outline: #6c5ce7 dotted 0.188rem;
   outline-offset: 0.15rem;
 }
@@ -53,7 +55,6 @@ body {
   transform-origin: center center;
   transition: transform 0.3s ease-in-out;
 }
-
 
 .open.hamburger {
   position: fixed;

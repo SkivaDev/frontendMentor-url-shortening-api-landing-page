@@ -49,7 +49,6 @@ const ShorteningSection = () => {
     toast.error(errorMessage);
   };
 
-
   const createShortLink = async (link) => {
     const response = await cleanuriAPI(link);
 
@@ -63,9 +62,7 @@ const ShorteningSection = () => {
     const { result_url } = response.data;
     console.log("RESULT ES: ", response.data);
     console.log("RESULT ES: ", result_url);
-    const linkExists = links.find(
-      (url) => url.original_link === link
-    );
+    const linkExists = links.find((url) => url.original_link === link);
 
     if (linkExists) {
       toast.warning("This link has already been shortened");
@@ -97,7 +94,11 @@ const ShorteningSection = () => {
     <section className="w-full bg-light-gray">
       <div className="flex flex-col w-full max-w-[1190px] mx-auto px-[23.6px] md:px-[39.6px] pb-[90px] md:pb-[120px]">
         <Form onHandleSubmit={createShortLink} />
-        <div className={`flex flex-col gap-[22px] md:gap-[15px] ${links.length > 0 ? "mt-[24px]": ""}`}>
+        <div
+          className={`flex flex-col gap-[22px] md:gap-[15px] ${
+            links.length > 0 ? "mt-[24px]" : ""
+          }`}
+        >
           {links.map((link, index) => (
             <SingleLink
               key={index}
@@ -177,7 +178,9 @@ const Form = ({ onHandleSubmit }) => {
       </div>
       <button
         type="submit"
-        className={`${errors.url ? "mt-[22px]" : "mt-0"} md:mt-0 w-full md:w-[188px] md:flex md:justify-center md:items-center py-[8px] px-[40px] md:p-0 text-[20px] font-bold rounded-[10px] tracking-[-0.99px] md:tracking-normal bg-cyan text-white hover:bg-light-cyan transition-all`}
+        className={`${
+          errors.url ? "mt-[22px]" : "mt-0"
+        } md:mt-0 w-full md:w-[188px] md:flex md:justify-center md:items-center py-[8px] px-[40px] md:p-0 text-[20px] font-bold rounded-[10px] tracking-[-0.99px] md:tracking-normal bg-cyan text-white hover:bg-light-cyan transition-all`}
       >
         Shorten It!
       </button>

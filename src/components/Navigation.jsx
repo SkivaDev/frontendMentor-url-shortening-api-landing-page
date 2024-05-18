@@ -6,11 +6,7 @@ const Navigation = () => {
   return (
     <nav className="relative flex justify-between items-center gap-[46px] mt-[40px] md:mt-[48px] px-[22.6px] md:px-[39.6px] w-full max-w-[1190px] mx-auto">
       <a href="/">
-        <img
-          className="max-w-max"
-          src="./images/logo.svg"
-          alt="shortly logo"
-        />
+        <img className="max-w-max" src="./images/logo.svg" alt="shortly logo" />
       </a>
       <div
         className={`${
