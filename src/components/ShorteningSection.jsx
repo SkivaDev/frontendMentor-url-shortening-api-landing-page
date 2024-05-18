@@ -97,7 +97,7 @@ const ShorteningSection = () => {
     <section className="w-full bg-light-gray">
       <div className="flex flex-col w-full max-w-[1190px] mx-auto px-[23.6px] md:px-[39.6px] pb-[90px] md:pb-[120px]">
         <Form onHandleSubmit={createShortLink} />
-        <div className="flex flex-col gap-[22px] md:gap-[15px] mt-[24px]">
+        <div className={`flex flex-col gap-[22px] md:gap-[15px] ${links.length > 0 ? "mt-[24px]": ""}`}>
           {links.map((link, index) => (
             <SingleLink
               key={index}
