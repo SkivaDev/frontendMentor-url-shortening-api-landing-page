@@ -97,7 +97,7 @@ const ShorteningSection = () => {
     <section className="w-full bg-light-gray">
       <div className="flex flex-col w-full max-w-[1190px] mx-auto px-[23.6px] md:px-[39.6px] pb-[90px] md:pb-[120px]">
         <Form onHandleSubmit={createShortLink} />
-        <div className="flex flex-col gap-[15px] mt-[24px]">
+        <div className="flex flex-col gap-[22px] md:gap-[15px] mt-[24px]">
           {links.map((link, index) => (
             <SingleLink
               key={index}
@@ -131,6 +131,7 @@ const Form = ({ onHandleSubmit }) => {
 
   return (
     <form
+      id="shortening-form"
       onSubmit={handleSubmit(onSubmit)}
       className="w-full flex flex-col md:flex-row justify-between gap-[16px] md:gap-[24px] px-[24px] md:pl-[64px] md:pr-[65px] py-[25px] md:py-[52px] mt-[-80px] md:mt-[-84px] rounded-[10px] bg-dark-violet bg-pattern bg-no-repeat bg-cover"
     >
@@ -176,7 +177,7 @@ const Form = ({ onHandleSubmit }) => {
       </div>
       <button
         type="submit"
-        className="w-full md:w-[188px] md:flex md:justify-center md:items-center py-[8px] px-[40px] md:p-0 text-[20px] font-bold rounded-[10px] tracking-[-0.99px] md:tracking-normal bg-cyan text-white hover:bg-light-cyan transition-all"
+        className={`${errors.url ? "mt-[22px]" : "mt-0"} md:mt-0 w-full md:w-[188px] md:flex md:justify-center md:items-center py-[8px] px-[40px] md:p-0 text-[20px] font-bold rounded-[10px] tracking-[-0.99px] md:tracking-normal bg-cyan text-white hover:bg-light-cyan transition-all`}
       >
         Shorten It!
       </button>
@@ -211,12 +212,12 @@ const SingleLink = React.forwardRef(({ link }, ref) => {
   return (
     <div
       ref={ref}
-      className="w-full flex flex-col md:flex-row justify-between items-center gap-[90px] bg-white pr-[24px] pl-[32px] py-[16px] text-[19px] font-medium rounded-[10px] tracking-[0.5px]"
+      className="w-full flex flex-col md:flex-row justify-between items-center gap-[25px] md:gap-[90px] bg-white px-[15px] md:pr-[24px] md:pl-[32px] py-[15px] md:py-[16px] text-[15px] md:text-[19px] font-medium rounded-[10px] tracking-[0.5px]"
     >
       <p className="w-full md:flex-1 overflow-hidden whitespace-nowrap text-ellipsis">
         {link.original_link}
       </p>
-      <div>
+      <div className="w-full md:w-auto">
         <a className="w-full md:w-[188px] mt-[16px] md:mt-0 md:ml-[16px] text-cyan">
           {link.short_link}
         </a>
@@ -225,7 +226,7 @@ const SingleLink = React.forwardRef(({ link }, ref) => {
           type="button"
           className={`${
             Copied ? "bg-dark-violet" : "bg-cyan"
-          } w-full md:w-[103px] md:ml-[16px] py-[10px] text-white text-[15px] font-bold rounded-[6px] transition-all`}
+          } w-full md:w-[103px] mt-[14px] md:mt-0 md:ml-[16px] py-[10px] text-white text-[15px] font-bold rounded-[6px] transition-all`}
           onClick={(e) => copyToClipboard(link.short_link, e)}
         >
           {Copied ? "Copied!" : "Copy"}
